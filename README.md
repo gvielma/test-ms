@@ -45,3 +45,4 @@ Prueba de Arquitectura de Microservicios
  - Mejorar comentarios y javaDoc
  - Configurar el despliegue desde un script y no desde Maven
  - implementar el patron Circuit-Braker (Resilience4j) para tolerancia a fallos.
+ - Implementar bases de datos no embebida ya que estas funciona en memoria
