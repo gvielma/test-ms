@@ -44,5 +44,5 @@ spring:
     template:
       default-topic: transaction-topic
     consumer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: service-broker:9092
       group-id: transaction-account-consumer
