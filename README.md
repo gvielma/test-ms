@@ -13,7 +13,7 @@ Prueba de Arquitectura de Microservicios
    - transaction-service
    - gateway
   - Cada proyecto tiene una directiva maven donde ejecutando este comando además de empaquetar el proyecto, se desencadenará la creación de la imagen docker. Este proceso puede tardar entre 4 y 5 min por cada proyecto, puedo ejecutarlo en paralelo en diferentes consola de comandos.
-3. Para ejecutar la solución en ambiente docker, siga los pasos que se indican a continuación. si desea ejecutar en ambiente local puede ignorar la configuracion de este paso 3. 
+3. Para ejecutar la solución en ambiente docker, siga los pasos que se indican a continuación. si desea ejecutar en solo en ambiente local puede ignorar la configuracion de este paso 3. 
    - Desde una consola de comando ejecute: `docker exec -it service-broker sh` o vaya al escritorio de docker y haga clic en el botón "CLI" del contenedor service-broker. Esto abrirá una consola de comandos dentro del contenedor.
    - Ahora ejecute: ` apk add nano ` para agregar el editor nano
    - ejecute: ` cd opt/kafka_2.13-2.6.0/config/ ` para acceder a la carpeta de configuracion de kafka
