@@ -1,0 +1,31 @@
+server:
+  port: 8091
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8762/eureka
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+      routes:
+        - id: account-service
+          uri: lb://account-service
+          predicates:
+            - Path=/api/cuentas/**
+            - Method=GET,POST,PUT,DELETE
+
+        - id: customer-service
+          uri: lb://customer-service
+          predicates:
+            - Path=/api/clientes/**
+            - Method=GET,POST,PUT,DELETE
+        
+        - id: transaction-service
+          uri: lb://transaction-service
+          predicates:
+            - Path=/api/movimientos/**
+            - Method=GET,POST,PUT,DELETE    
