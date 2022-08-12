@@ -1,0 +1,464 @@
+{
+	"info": {
+		"_postman_id": "ab02d179-84c0-4044-9e60-bc7efbe9dcb2",
+		"name": "TestNeoris",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1052893"
+	},
+	"item": [
+		{
+			"name": "Cuentas",
+			"item": [
+				{
+					"name": "Obtener cuenta por Numero de cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/cuentas/478758",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"cuentas",
+								"478758"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener cuenta por ClienteId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/cuentas/cliente/111111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"cuentas",
+								"cliente",
+								"111111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception No Existe Cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/cuentas/478758444",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"cuentas",
+								"478758444"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Numero Cuenta\": \"478758\",\r\n    \"Tipo\": \"Ahorro\",\r\n    \"Contraseña\": \"123\",\r\n    \"Saldo Inicial\": 2000.0,\r\n    \"Estado\": \"True\",\r\n    \"Cliente\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/cuentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception Existe Cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Numero Cuenta\": \"478758\",\r\n    \"Tipo\": \"Ahorro\",\r\n    \"Contraseña\": \"123\",\r\n    \"Saldo Inicial\": 2000.0,\r\n    \"Estado\": \"True\",\r\n    \"Cliente\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/cuentas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"cuentas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cuenta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Numero Cuenta\": \"478758\",\r\n    \"Tipo\": \"Ahorro\",\r\n    \"Saldo Inicial\": 2000.0,\r\n    \"Estado\": \"True\",\r\n    \"Contraseña\": \"123\",\r\n    \"Cliente\": 111111\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/cuentas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"cuentas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desactivar Cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/cuentas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"cuentas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Error Clientew existente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id Cliente\": 111111,\r\n    \"Contraseña\": \"123\",\r\n    \"Estado\": \"True\",\r\n    \"Nombres\": \"Jose Lema\",\r\n    \"Genero\": \"Masculino\",\r\n    \"Edad\": 35,\r\n    \"Identificacion\": \"18426432\",\r\n    \"Direccion\": \"Otavalo sn y principal\",\r\n    \"Telefono\": \"098254785\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/clientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"clientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id Cliente\": 555555,\r\n    \"Contraseña\": \"123\",\r\n    \"Estado\": \"True\",\r\n    \"Nombres\": \"Jose Lema\",\r\n    \"Genero\": \"Masculino\",\r\n    \"Edad\": 35,\r\n    \"Identificacion\": \"18426432\",\r\n    \"Direccion\": \"Otavalo sn y principal\",\r\n    \"Telefono\": \"098254785\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/clientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"clientes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar cliente por CodigoCliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id Cliente\": 111111,\r\n    \"Contraseña\": \"123\",\r\n    \"Estado\": \"True\",\r\n    \"Nombres\": \"Jose Lema\",\r\n    \"Genero\": \"Masculino\",\r\n    \"Edad\": 35,\r\n    \"Identificacion\": \"18426432\",\r\n    \"Direccion\": \"Otavalo sn y principal\",\r\n    \"Telefono\": \"098254785\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/clientes/codigo/111111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"clientes",
+								"codigo",
+								"111111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Error Actualizando CodigoCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"Id Cliente\": 111222,\r\n    \"Estado\": \"True\",\r\n    \"Nombres\": \"Jose Lema\",\r\n    \"Genero\": \"Masculino\",\r\n    \"Edad\": 20,\r\n    \"Identificacion\": \"18426432\",\r\n    \"Direccion\": \"Otavalo sn y principal\",\r\n    \"Telefono\": \"098254785\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id Cliente\": 111111,\r\n    \"Estado\": \"True\",\r\n    \"Nombres\": \"Jose Lema\",\r\n    \"Genero\": \"Femenino\",\r\n    \"Edad\": 20,\r\n    \"Identificacion\": \"18426432\",\r\n    \"Direccion\": \"Otavalo sn y principal\",\r\n    \"Telefono\": \"098254785\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Desabilitar Cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id Cliente\": 1111111111,\r\n    \"Estado\": \"True\",\r\n    \"Nombres\": \"Jose Lema\",\r\n    \"Genero\": \"Femenino\",\r\n    \"Edad\": 20,\r\n    \"Identificacion\": \"18426432\",\r\n    \"Direccion\": \"Otavalo sn y principal\",\r\n    \"Telefono\": \"098254785\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "Agregar Movimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n      \"Numero Cuenta\": \"478758\",\r\n      \"Movimiento\": 7000\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/movimientos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"movimientos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Movimientos por cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/movimientos/478758",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"movimientos",
+								"478758"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Reportes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9000/api/movimientos/111111/reportes?desde=12/08/2022&hasta=12/08/2022",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"movimientos",
+								"111111",
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "desde",
+									"value": "12/08/2022"
+								},
+								{
+									"key": "hasta",
+									"value": "12/08/2022"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
