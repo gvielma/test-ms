@@ -36,7 +36,7 @@ Prueba de Arquitectura de Microservicios
 
  ##### Nota: Si desea probar la aplicacion en entorno local puede ejecutar la aplicación desde su IDE y use la collecion postman TEST_MS.postman_collection con la URL: http://localhost:8090/api/ para entorno Docker use el puerto 9000.
  
- #Oportunidades de mejoras.
+# portunidades de mejoras.
  - Agregar un config-server.
  - Agregar seguridad a los endpoints. (SpringSecurity, OAUTH, SpringSession JWT, Cors etc..).
  - Agregar Actuactor.
